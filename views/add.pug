@@ -1,0 +1,8 @@
+extends layout/main-layout.pug
+block content
+    main.container
+        form(action="/admin/add", method="post")
+            .form-group
+                label(for="title") Title
+                input.form-control(type="text",name="title",placeholder="enter title")
+            button.btn.btn-dark(type="submit") Add Product 

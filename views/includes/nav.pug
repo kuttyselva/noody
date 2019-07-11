@@ -1,0 +1,7 @@
+nav.navbar.navbar-dark.bg-dark.justify-content-between.flex-nowrap.flex-row
+    a.navbar-brand.float-left(href="/") Shopiee
+    ul.nav.navbar-nav.flex-row.float-right
+        li.nav-item
+            a.nav-link.pr-3(href="/admin/add",class=(path === '/admin/add' ? 'active' : 'none')) Add Product
+        li.nav-item
+            a.nav-link(href="/",class=(path === '/' ? 'active' : 'none')) Products     
