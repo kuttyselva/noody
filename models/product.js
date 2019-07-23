@@ -21,9 +21,6 @@ module.exports = class Product {
             fs.writeFile(p, JSON.stringify(products), (err) => { console.log(err) });
 
         })
-        fs.readFile(p, (err, fileCont) => {
-           
-        });
     }
     static fetchAll(cb) {
         getProfrmFile(cb);

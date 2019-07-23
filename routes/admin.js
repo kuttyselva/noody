@@ -1,6 +1,7 @@
 const express=require('express');
 const router=express.Router();
-const proCon=require('../controllers/products');
-router.get('/add',proCon.getAddPro);
-router.post('/add',proCon.addNewPro);
+const adCon=require('../controllers/admin');
+router.get('/add',adCon.getAddPro);
+router.post('/add',adCon.addNewPro);
+router.get('/pro',adCon.getProduct);
 module.exports=router;
