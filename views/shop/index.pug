@@ -1,6 +1,7 @@
 extends ../layout/main-layout.pug
 block content
     div(style="margin:5rem;")
+        h1.text-center.display-3 #{pagetitle}
         main.d-flex.justify-content-center.row(style="display: flex;")
             if pro.length > 0
                 each product in pro
