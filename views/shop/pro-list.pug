@@ -7,9 +7,9 @@ block content
                     .col-md-3.text-center.card(style="width:18rem;margin:1rem")
                         .card-body
                             h4.card-title #{product.title}
-                            img.card-img-top(src="https://timedotcom.files.wordpress.com/2015/06/521811839-copy.jpg", alt="")
-                            h5.card-title $200
-                            p.card-text Some text
+                            img.card-img-top.img-thumbnail.mb-3(src=product.imageurl, alt="")
+                            h5.card-title #{product.price}
+                            p.card-text #{product.desc}
                             a.btn.btn-dark(href="#") Add
             else
                 h1.display-3.text-center No Products

@@ -12,8 +12,11 @@ const getProfrmFile = cb => {
 
 }
 module.exports = class Product {
-    constructor(t) {
-        this.title = t;
+    constructor(title,imageurl,desc,price) {
+        this.title = title;
+        this.imageurl=imageurl;
+        this.desc=desc;
+        this.price=price;
     }
     save() {
         getProfrmFile(products=>{

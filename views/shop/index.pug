@@ -1,1 +1,16 @@
 extends ../layout/main-layout.pug
+block content
+    div(style="margin:5rem;")
+        main.d-flex.justify-content-center.row(style="display: flex;")
+            if pro.length > 0
+                each product in pro
+                    .col-md-3.text-center.card(style="width:18rem;margin:1rem")
+                        .card-body
+                            h4.card-title #{product.title}
+                            img.card-img-top.img-thumbnail.mb-3(src=product.imageurl, alt="")
+                            h5.card-title #{product.price}
+                            p.card-text #{product.desc}
+                            a.btn.btn-dark(href="#") Add
+            else
+                h1.display-3.text-center No Products
+            
