@@ -1,1 +1,14 @@
 extends ../layout/main-layout.pug
+block content
+    div.container
+        h3.display-4.text-center #{pro.title}
+        .row
+            .col-md-4
+                img.img-thumbnail(src=pro.imageurl)
+            .col-md-8
+                p.lead Description: #{pro.desc}
+                br
+                p.lead Price: #{pro.price}
+                br
+                form(action="/cart", method="post")
+                    button.btn.btn-dark.m-3(type="submit") Add to Cart

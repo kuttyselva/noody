@@ -19,4 +19,4 @@ app.use(shopRoute);
 
 app.use(errCon.notFound);
 
-app.listen(8000);
+app.listen(3000);

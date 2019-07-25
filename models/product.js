@@ -19,6 +19,7 @@ module.exports = class Product {
         this.price=price;
     }
     save() {
+        this.id=Math.random().toString();
         getProfrmFile(products=>{
             products.push(this);
             fs.writeFile(p, JSON.stringify(products), (err) => { console.log(err) });
@@ -27,5 +28,11 @@ module.exports = class Product {
     }
     static fetchAll(cb) {
         getProfrmFile(cb);
+    }
+    static findbyId(id,cb){
+        getProfrmFile(products=>{
+            const prod=products.find(p=> p.id===id);
+            cb(prod);
+        })
     }
 }
