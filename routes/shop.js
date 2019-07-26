@@ -5,6 +5,7 @@ router.get('/',shopCon.getIndex);
 router.get('/products',shopCon.getPro);
 router.get('/products/:id',shopCon.getProd);
 router.get('/cart',shopCon.getCart);
+router.post('/cart',shopCon.postCart);
 router.get('/orders',shopCon.getOrders);
 router.get('/checkout',shopCon.getCheckout);
 module.exports=router;

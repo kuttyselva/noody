@@ -11,9 +11,10 @@ block content
                             img.card-img-top.img-thumbnail.mb-3(src=product.imageurl, alt="")
                             h5.card-title #{product.price}
                             p.card-text #{product.desc}
-                            form(action="/add-to-cart", method="post")
+                            form(action="/cart", method="post")
                                 a.btn.btn-dark.mr-3(href="/products/"+product.id) Details
                                 button.btn.btn-dark(type="submit") Add to Cart
+                                input(type="hidden", name="proid",value=product.id)
             else
                 h1.display-3.text-center No Products
             
