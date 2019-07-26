@@ -21,7 +21,7 @@ module.exports =class Cart{
                 updatedPro={id:id,qty:1};
                 cart.products=[...cart.products,updatedPro];
             }
-            cart.totalPrice=cart.totalPrice+proPrice;
+            cart.totalPrice=cart.totalPrice+ +proPrice;
             fs.writeFile(p,JSON.stringify(cart),err=>{console.log(err)});
         });
     }

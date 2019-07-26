@@ -12,7 +12,7 @@ block content
                             h5.card-title #{product.price}
                             p.card-text #{product.desc}
                             form(action="/admin/delete-pro", method="post")
-                                a.btn.btn-dark.m-3(href="/admin/edit-pro") Edit
+                                a.btn.btn-dark.m-3(href="/admin/edit") Edit
                                 button.btn.btn-dark.m-3(type="submit") Delete
             else
                 h1.display-3.text-center No Products

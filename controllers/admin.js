@@ -1,7 +1,11 @@
 const Product = require("../models/product");
 const alert = require("alert-node");
 exports.getAddPro = (req, res, next) => {
-  res.render("admin/add", { pagetitle: "Add products", path: "/admin/add" });
+  res.render("admin/edit-pro", {
+    pagetitle: "Add products",
+    path: "/admin/add",
+    editing:false
+  });
 };
 exports.addNewPro = (req, res) => {
   const title = req.body.title;
@@ -20,4 +24,23 @@ exports.getProduct = (req, res) => {
       path: "/admin/pro"
     });
   });
+};
+exports.getEditProduct = (req, res, next) => {
+  const Editmode = req.query.editing;
+  if (!Editmode) {
+    res.redirect("/");
+  }
+  const proid=req.params.id;
+  Product.findbyId(proid,product=>{
+    if(!product){
+      return res.redirect("/");
+    }
+    res.render("admin/edit-pro", {
+      pagetitle: "Edit products",
+      path: "/admin/add",
+      editing: Editmode,
+      pro:product
+    });
+  })
+  
 };
