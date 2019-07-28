@@ -2,7 +2,7 @@ extends ../layout/main-layout.pug
 block content
     main.container
         h1.text-center.display-3 #{pagetitle}
-        form(action=editing ? "/admin/edit" :"/admin/add", method="post")
+        form(action=editing ? "/admin/edit":"/admin/add", method="POST")
             .form-group
                 label(for="title") Title
                 input.form-control(type="text",name="title",placeholder="enter title", value= editing ? pro.title : '')
@@ -12,6 +12,8 @@ block content
                 textarea.form-control(type="text",name="desc",placeholder="enter description",value= editing ? pro.desc : '')= editing?pro.desc:''
                 label(for="price") Price
                 input.form-control(type="number",step="0.01",name="price",placeholder="enter price",value= editing ? pro.price : '')
+                if editing
+                    input.form-control(type="hidden",value= pro.id ,name="proid")
                 button.btn.btn-dark.m-3.btn-lg(type="submit")
                     if editing  
                         div Update Product

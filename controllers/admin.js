@@ -12,7 +12,7 @@ exports.addNewPro = (req, res) => {
   const imageurl = req.body.imageurl;
   const desc = req.body.desc;
   const price = req.body.price;
-  const product = new Product(title, imageurl, desc, price);
+  const product = new Product(null,title, imageurl, desc, price);
   product.save();
   res.render("admin/add");
 };
@@ -41,6 +41,21 @@ exports.getEditProduct = (req, res, next) => {
       editing: Editmode,
       pro:product
     });
-  })
+  });
   
 };
+exports.postEditPro=(req,res)=>{
+  const id = req.body.proid;
+  const title = req.body.title;
+  const imageurl = req.body.imageurl;
+  const desc = req.body.desc;
+  const price = req.body.price;
+  const product = new Product(id,title, imageurl, desc, price);
+  product.save();
+  res.redirect("/admin/pro");
+};
+exports.postDeletePro=(req,res)=>{
+  const id=req.body.proid;
+  Product.deletebyId(id);
+  res.redirect('pro');
+}
