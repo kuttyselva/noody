@@ -24,7 +24,7 @@ exports.postCart = (req, res) => {
   Product.findbyId(proid,product=>{
     Cart.AddProduct(proid,product.price);
   });
-  res.redirect('/');
+  return res.redirect('/');
 };
 exports.getOrders = (req, res) => {
   res.render("shop/orders", { path: "/orders", pagetitle: "Your Orders" });

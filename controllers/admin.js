@@ -28,7 +28,7 @@ exports.getProduct = (req, res) => {
 exports.getEditProduct = (req, res, next) => {
   const Editmode = req.query.editing;
   if (!Editmode) {
-    res.redirect("/");
+    return res.redirect("/");
   }
   const proid=req.params.id;
   Product.findbyId(proid,product=>{
@@ -52,10 +52,10 @@ exports.postEditPro=(req,res)=>{
   const price = req.body.price;
   const product = new Product(id,title, imageurl, desc, price);
   product.save();
-  res.redirect("/admin/pro");
+  return res.redirect("/admin/pro");
 };
 exports.postDeletePro=(req,res)=>{
   const id=req.body.proid;
   Product.deletebyId(id);
-  res.redirect('pro');
+  return res.redirect('pro');
 }
