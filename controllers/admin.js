@@ -14,7 +14,7 @@ exports.addNewPro = (req, res) => {
   const price = req.body.price;
   const product = new Product(null,title, imageurl, desc, price);
   product.save();
-  res.render("admin/add");
+  return res.redirect("/admin/add");
 };
 exports.getProduct = (req, res) => {
   Product.fetchAll(products => {
@@ -35,7 +35,7 @@ exports.getEditProduct = (req, res, next) => {
     if(!product){
       return res.redirect("/");
     }
-    res.render("admin/edit-pro", {
+    return res.render("admin/edit-pro", {
       pagetitle: "Edit products",
       path: "/admin/add",
       editing: Editmode,
