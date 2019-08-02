@@ -8,7 +8,7 @@ block content
                     .col-md-3.text-center.card(style="width:18rem;margin:1rem")
                         .card-body
                             h4.card-title #{product.title}
-                            img.card-img-top.img-thumbnail.mb-3(src=product.imageurl, alt="")
+                            img.card-img-top.img-thumbnail.mb-3(src=product.imgurl, alt="")
                             h5.card-title #{product.price}
                             p.card-text #{product.desc}
                             form(action="/admin/delete", method="post")

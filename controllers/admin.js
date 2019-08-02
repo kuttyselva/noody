@@ -9,12 +9,14 @@ exports.getAddPro = (req, res, next) => {
 };
 exports.addNewPro = (req, res) => {
   const title = req.body.title;
-  const imageurl = req.body.imageurl;
+  const imgurl = req.body.imgurl;
   const desc = req.body.desc;
   const price = req.body.price;
-  const product = new Product(null,title, imageurl, desc, price);
-  product.save();
-  return res.redirect("/admin/add");
+  const product = new Product(null,title, imgurl, desc, price);
+  product.save().then(
+    ()=> res.redirect("/admin/add")
+  ).catch(err=>console.log(err));
+  
 };
 exports.getProduct = (req, res) => {
   Product.fetchAll(products => {
