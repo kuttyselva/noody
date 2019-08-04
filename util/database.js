@@ -1,3 +1,3 @@
-const seq=require('sequelize');
-const seq=new seq('node-complete','root','',{dialect:'mysql',host:'localhost'});
+const Seq=require('sequelize');
+const seq=new Seq('node_complete','root','',{dialect:'mysql',host:'localhost'});
 module.exports=seq;

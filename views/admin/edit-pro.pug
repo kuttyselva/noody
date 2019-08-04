@@ -9,7 +9,7 @@ block content
                 label(for="image") Image URL
                 input.form-control(type="text",name="imgurl",placeholder="enter imgurl",value= editing ? pro.imgurl : '')
                 label(for="desc") Description
-                textarea.form-control(type="text",name="desc",placeholder="enter description",value= editing ? pro.desc : '')= editing?pro.desc:''
+                textarea.form-control(type="text",name="desc",placeholder="enter description",value= editing ? pro.description : '')= editing?pro.description:''
                 label(for="price") Price
                 input.form-control(type="number",step="0.01",name="price",placeholder="enter price",value= editing ? pro.price : '')
                 if editing

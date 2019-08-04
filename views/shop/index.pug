@@ -10,7 +10,7 @@ block content
                             h4.card-title #{product.title}
                             img.card-img-top.img-thumbnail.mb-3(src=product.imgurl, alt="")
                             h5.card-title #{product.price}
-                            p.card-text #{product.desc}
+                            p.card-text #{product.description}
                             form(action="/cart", method="post")
                                 button.btn.btn-dark.m-3(type="submit") Add to Cart
                                 input(type="hidden", name="proid",value=product.id)

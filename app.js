@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 const path = require('path');
-const db=require('./util/database');
+const seq = require('./util/database');
 const app = express();
 app.set('view engine', 'pug');
 // app.set('view engine','ejs');
@@ -18,5 +18,8 @@ app.use('/admin', adminRoutes);
 app.use(shopRoute);
 
 app.use(errCon.notFound);
-
-app.listen(3000);
+seq.sync().then(res => {
+    // console.log(res);
+    app.listen(3000);
+}).
+    catch(err => console.log(err));
